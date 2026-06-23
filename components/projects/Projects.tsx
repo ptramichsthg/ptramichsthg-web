@@ -20,6 +20,7 @@ export default function Projects() {
             title={project.title}
             description={t.projects[project.descKey as keyof typeof t.projects]}
             image={project.image}
+            badge={project.badge}
             tech={project.tech}
             repo={project.repo}
             projectLink={project.linkProject}

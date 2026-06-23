@@ -18,6 +18,7 @@ interface ProjectCardProps {
   title: string
   description: string
   image: string
+  badge?: string
   tech: string[]
   repo: string
   projectLink: string
@@ -27,6 +28,7 @@ export default function ProjectCard({
   title,
   description,
   image,
+  badge,
   tech,
   repo,
   projectLink,
@@ -77,6 +79,27 @@ export default function ProjectCard({
             <LinkIcon className={cn("text-zinc-100 dark:text-zinc-800", image === "" ? "h-5 w-5" : "h-6 w-6")} />
           </Link>
         </motion.div>
+
+        {badge && (
+          <motion.div
+            ref={ref}
+            animate={ctrls}
+            initial="hidden"
+            variants={projectCardTitleAnimation}
+            className="mb-3"
+          >
+            <span className={cn(
+              "inline-block rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider",
+              badge.toLowerCase() === "freelance" 
+                ? "bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30" 
+                : badge.toLowerCase() === "bootcamp"
+                ? "bg-purple-500/20 text-purple-600 dark:text-purple-400 border border-purple-500/30"
+                : "bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30"
+            )}>
+              {badge}
+            </span>
+          </motion.div>
+        )}
 
         <h3 className={cn("font-bold leading-tight text-foreground", image === "" ? "text-xl md:text-2xl" : "text-2xl md:text-3xl lg:text-4xl lg:leading-tight")}>
           <motion.span
