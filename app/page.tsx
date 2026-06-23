@@ -13,14 +13,25 @@ import { useEffect, useState } from "react"
 export default function Home() {
   const [loadingPreloader, setLoadingPreloader] = useState<boolean>(true)
   const [endedLoading, setEndedLoading] = useState<boolean>(false)
+  const [isInitialized, setIsInitialized] = useState<boolean>(false)
 
   useEffect(() => {
+    const hasVisited = sessionStorage.getItem("portfolio-visited")
     const body = document.querySelector("body")
+
+    if (hasVisited) {
+      setLoadingPreloader(false)
+      setEndedLoading(true)
+      body?.classList.remove("overflow-hidden")
+      setIsInitialized(true)
+      return
+    }
 
     if (loadingPreloader) {
       body?.classList.add("overflow-hidden")
       setTimeout(() => {
         setLoadingPreloader(false)
+        sessionStorage.setItem("portfolio-visited", "true")
       }, 4000)
       setTimeout(() => {
         setEndedLoading(true)
@@ -28,7 +39,11 @@ export default function Home() {
     } else {
       body?.classList.remove("overflow-hidden")
     }
+    
+    setIsInitialized(true)
   }, [loadingPreloader])
+
+  if (!isInitialized) return null
 
   if (loadingPreloader) {
     return (
