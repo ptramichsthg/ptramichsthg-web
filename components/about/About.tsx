@@ -50,30 +50,30 @@ export default function About() {
 
           <div className="mb-10 flex w-full flex-col gap-6 leading-relaxed tracking-wide md:mb-16 md:gap-8 md:leading-relaxed lg:mb-16 lg:max-w-[90%]">
             <div className="flex flex-col gap-4 md:gap-3">
-              <AnimateHeading title={t.about.frontendEcosystem} delay={0.5} />
+              <AnimateHeading title={t.about.programmingLanguages} delay={0.5} />
               <AnimateBadges
-                skills={["React 19", "Next.js (App Router)", "Vue.js 3", "TypeScript", "Tailwind CSS"]}
+                skills={["HTML5", "CSS3", "Java", "JavaScript", "PHP"]}
                 delay={0.8}
               />
             </div>
             <div className="flex flex-col gap-4 md:gap-3">
-              <AnimateHeading title={t.about.backendApi} delay={1} />
+              <AnimateHeading title={t.about.databasesArchitecture} delay={1} />
               <AnimateBadges
-                skills={["Laravel 12", "Python", "FastAPI", "RESTful API"]}
+                skills={["MySQL", "PostgreSQL", "Relational Database Design", "MVC Architecture", "RESTful API"]}
                 delay={1.3}
               />
             </div>
             <div className="flex flex-col gap-4 md:gap-3">
-              <AnimateHeading title={t.about.databaseArchitecture} delay={1.5} />
+              <AnimateHeading title={t.about.frameworksLibraries} delay={1.5} />
               <AnimateBadges
-                skills={["MySQL", "PostgreSQL", "IndexedDB", "MVC Architecture"]}
+                skills={["Laravel", "Vue.js", "React.js", "Next.js"]}
                 delay={1.8}
               />
             </div>
             <div className="flex flex-col gap-4 md:gap-3">
-              <AnimateHeading title={t.about.toolsAuth} delay={2} />
+              <AnimateHeading title={t.about.toolsIntegrations} delay={2} />
               <AnimateBadges
-                skills={["Git", "GitHub", "Supabase", "OAuth 2.0", "JWT", "Midtrans"]}
+                skills={["Git", "GitHub", "Postman", "Midtrans Payment Gateway", "Google Authentication (OAuth)"]}
                 delay={2.3}
               />
             </div>
