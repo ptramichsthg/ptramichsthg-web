@@ -16,7 +16,7 @@ export default function ProjectsPage() {
       <main className="flex min-h-screen w-full flex-col items-center pt-32 pb-24">
         <div className="mx-auto flex w-[90%] flex-col items-start lg:max-w-[1212.8px]">
           <Link 
-            href="/#projects" 
+            href="/" 
             className="mb-8 flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors font-medium group"
           >
             <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
