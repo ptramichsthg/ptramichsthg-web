@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: {
     template: "Putra Michael Sitohang | %s",
-    default: "Putra Michael Sitohang | Full-Stack Software Engineer",
+    default: "Putra Michael Sitohang",
   },
   description:
     "A passionate Full-Stack Software Engineer specializing in backend architectures, API integrations, and scalable modern web interfaces.",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: {
       template: "Putra Michael Sitohang | %s",
-      default: "Putra Michael Sitohang | Full-Stack Software Engineer",
+      default: "Putra Michael Sitohang",
     },
     description:
       "A passionate Full-Stack Software Engineer specializing in backend architectures, API integrations, and scalable modern web interfaces.",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: {
       template: "Putra Michael Sitohang | %s",
-      default: "Putra Michael Sitohang | Full-Stack Software Engineer",
+      default: "Putra Michael Sitohang",
     },
     description:
       "A passionate Full-Stack Software Engineer specializing in backend architectures, API integrations, and scalable modern web interfaces.",

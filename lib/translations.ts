@@ -41,6 +41,9 @@ export const translations = {
       desc2: "An end-to-end course management platform with enterprise-level security. Implements a content delivery architecture using AWS S3 signed URLs and asynchronous Midtrans webhook processing for real-time transactions.",
       desc3: "A centralized Support Ticketing System (Helpdesk) with an SPA architecture. The frontend uses Vue.js 3 and Pinia, while the backend implements Laravel 11 with Laravel Sanctum for token-based authentication. Features include tiered ticket tracking, role management (Admin/User), and real-time notifications.",
       desc4: "A full-stack e-commerce prototype focusing on architectural fundamentals. Built a Role-Based Access Control (RBAC) system and Custom JWT Authentication, and designed a RESTful API using raw MySQL queries.",
+      desc5: "A collaborative information portal and blog focusing on PC hardware. Built in a team utilizing classic web fundamentals (HTML5, Vanilla CSS3, Vanilla JS) and integrated with Swiper.js for dynamic and interactive product catalog sliders.",
+      desc6: "A unique e-commerce web application simulation for a firearms store featuring multi-role authentication. Developed natively utilizing PHP and MySQL for backend logic, and styled responsively using Bootstrap 5.",
+      desc7: "A full-stack RESTful API and frontend application for digital bookshelf management, featuring complete CRUD operations and real-time filtering. The backend is built with Node.js and Hapi.js using in-memory data, while the modern UI is styled with TailwindCSS.",
     },
     // Experience
     experience: {
@@ -106,6 +109,9 @@ export const translations = {
       desc2: "Platform manajemen kursus end-to-end dengan tingkat keamanan enterprise. Mengimplementasikan arsitektur pengiriman konten menggunakan AWS S3 signed URLs dan pemrosesan asinkron webhook Midtrans untuk transaksi real-time.",
       desc3: "Sistem Manajemen Tiket Support (Helpdesk) terpusat dengan arsitektur SPA. Frontend menggunakan Vue.js 3 dan Pinia, sedangkan backend mengimplementasikan Laravel 11 dengan Laravel Sanctum untuk autentikasi berbasis token. Dilengkapi fitur pelacakan tiket berjenjang, manajemen peran (Admin/User), dan notifikasi real-time.",
       desc4: "Prototipe e-commerce full-stack dengan fokus pada fundamental arsitektur. Membangun sistem Role-Based Access Control (RBAC) dan Custom JWT Authentication, serta mendesain RESTful API menggunakan raw MySQL queries.",
+      desc5: "E-Computer adalah portal informasi dan blog kolaboratif seputar perangkat keras (PC hardware). Dikembangkan dalam tim menggunakan fundamental web klasik (HTML5, Vanilla CSS3, Vanilla JS) dan terintegrasi dengan Swiper.js untuk interaktivitas slider katalog produk yang dinamis.",
+      desc6: "Aplikasi web e-commerce simulasi toko senjata api yang unik dengan fitur autentikasi multi-role. Dikembangkan secara native menggunakan PHP dan MySQL untuk logika backend, dan dirancang responsif menggunakan kerangka kerja Bootstrap 5.",
+      desc7: "Aplikasi full-stack RESTful API dan antarmuka web untuk manajemen rak buku digital, dilengkapi operasi CRUD dan pencarian real-time. Backend dibangun menggunakan Node.js dan Hapi.js dengan penyimpanan in-memory, sementara antarmuka UI didesain menggunakan TailwindCSS.",
     },
     // Experience
     experience: {

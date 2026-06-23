@@ -14,7 +14,7 @@ export default function Projects() {
     >
       <ProjectTitleAnimate />
       <div className="mb-24 grid w-[90%] grid-cols-1 grid-rows-2 gap-x-6 gap-y-6 lg:max-w-[1200px] lg:grid-cols-1">
-        {projects.map((project, index) => (
+        {projects.slice(0, 3).map((project, index) => (
           <ProjectCard
             key={index}
             title={project.title}
