@@ -21,7 +21,7 @@ export default function NavMenuSocial({
   classes,
   link,
 }: NavMenuSocialProps) {
-  const el = useRef<HTMLDivElement | null>(null)
+  const el = useRef<HTMLAnchorElement | null>(null)
   const tl = useRef<GSAPTimeline | null>(gsap.timeline({ paused: true }))
 
   useIsomorphicLayoutEffect(() => {
@@ -46,6 +46,7 @@ export default function NavMenuSocial({
 
   return (
     <Link
+      ref={el}
       href={link}
       target={title === "email" ? "_self" : "_blank"}
       className={cn("group", classes)}

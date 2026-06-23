@@ -52,29 +52,47 @@ export default function About() {
             <div className="flex flex-col gap-4 md:gap-3">
               <AnimateHeading title={t.about.programmingLanguages} delay={0.5} />
               <AnimateBadges
-                skills={["HTML5", "CSS3", "Java", "JavaScript", "PHP"]}
+                skills={[
+                  { name: "HTML5", icon: "html5" },
+                  { name: "CSS3", icon: "css" },
+                  { name: "JavaScript", icon: "javascript" },
+                  { name: "TypeScript", icon: "typescript" },
+                  { name: "React.js", icon: "react" },
+                  { name: "Next.js", icon: "nextdotjs" },
+                  { name: "Vue.js", icon: "vuedotjs" },
+                  { name: "Tailwind CSS", icon: "tailwindcss" },
+                  { name: "Framer Motion", icon: "framer" },
+                  { name: "Vite", icon: "vite" }
+                ]}
                 delay={0.8}
               />
             </div>
             <div className="flex flex-col gap-4 md:gap-3">
               <AnimateHeading title={t.about.databasesArchitecture} delay={1} />
               <AnimateBadges
-                skills={["MySQL", "PostgreSQL", "Relational Database Design", "MVC Architecture", "RESTful API"]}
+                skills={[
+                  { name: "Laravel", icon: "laravel" },
+                  { name: "PHP", icon: "php" },
+                  { name: "Python", icon: "python" },
+                  "Java",
+                  { name: "Android Native", icon: "android" }
+                ]}
                 delay={1.3}
               />
             </div>
             <div className="flex flex-col gap-4 md:gap-3">
-              <AnimateHeading title={t.about.frameworksLibraries} delay={1.5} />
+              <AnimateHeading title={t.about.databaseTools} delay={1.5} />
               <AnimateBadges
-                skills={["Laravel", "Vue.js", "React.js", "Next.js"]}
+                skills={[
+                  { name: "MySQL", icon: "mysql" },
+                  { name: "Supabase", icon: "supabase" },
+                  { name: "MongoDB", icon: "mongodb" },
+                  { name: "Git", icon: "git" },
+                  { name: "Github", icon: "github" },
+                  { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" },
+                  { name: "Android Studio", icon: "androidstudio" }
+                ]}
                 delay={1.8}
-              />
-            </div>
-            <div className="flex flex-col gap-4 md:gap-3">
-              <AnimateHeading title={t.about.toolsIntegrations} delay={2} />
-              <AnimateBadges
-                skills={["Git", "GitHub", "Postman", "Midtrans Payment Gateway", "Google Authentication (OAuth)"]}
-                delay={2.3}
               />
             </div>
           </div>

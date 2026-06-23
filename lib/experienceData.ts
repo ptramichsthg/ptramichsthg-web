@@ -31,11 +31,7 @@ export const experiences = [
 export const education = [
   {
     id: 1,
-    degree: "S1 Teknik Informatika",
-    institution: "Universitas Jenderal Achmad Yani",
-    concentration: "Data Software Engineering",
-    gpa: "2.87 / 4.00",
-    date: "09/2023 – Present",
-    location: "Cimahi, Indonesia"
+    date: "2023 – Present",
+    location: "Bandung, Indonesia",
   }
 ];

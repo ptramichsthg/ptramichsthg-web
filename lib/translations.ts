@@ -27,10 +27,9 @@ export const translations = {
       paragraph2: "I am a Full-Stack Developer with deep specialization in the Laravel ecosystem. I am highly passionate about building high-performance web applications, leveraging Laravel for robust backend logic and integrating it seamlessly with modern frontends like Vue.js and React.js.",
       paragraph3: "My experience includes designing MySQL and PostgreSQL relational database architectures, implementing Role-Based Access Control, to integrating third-party services such as payment gateways.",
       paragraph4: "I am currently seeking an opportunity to contribute fully as a Full-Stack Laravel Developer within a dynamic and innovative engineering team.",
-      programmingLanguages: "Programming Languages",
-      databasesArchitecture: "Databases & Architecture",
-      frameworksLibraries: "Frameworks & Libraries",
-      toolsIntegrations: "Tools & Integrations",
+      programmingLanguages: "Frontend",
+      databasesArchitecture: "Backend & Mobile",
+      databaseTools: "Database & Tools",
       downloadCV: "Download Resume",
     },
     // Projects
@@ -56,6 +55,10 @@ export const translations = {
       desc3: "Implemented a reservation management system using the Laravel 12 framework with MVC architecture. Focused on managing real-time room availability state and designing MySQL database relationships to ensure data integrity and prevent double-booking anomalies. Conducted functional testing on the transaction module to ensure application stability according to software engineering standards.",
       eduConcentration: "Concentration:",
       eduGPA: "Current GPA:",
+      educationIntro: "Informatics Engineering undergraduate student at Jenderal Achmad Yani University, Cimahi. Started studying in 2023, currently active and continuously learning new things.",
+      edu1Role: "B.Sc. in Informatics Engineering",
+      edu1Company: "Jenderal Achmad Yani University, Bandung",
+      edu1Desc: "Began delving into the software development world, from programming fundamentals to fullstack web and mobile development.",
     },
     // Contact
     contact: {
@@ -89,10 +92,9 @@ export const translations = {
       paragraph2: "Saya adalah seorang Full-Stack Developer dengan spesialisasi mendalam pada ekosistem Laravel. Saya sangat antusias membangun aplikasi web berkinerja tinggi, memanfaatkan keandalan Laravel di sisi backend dan mengintegrasikannya dengan antarmuka dinamis seperti Vue.js maupun React.js.",
       paragraph3: "Pengalaman saya mencakup perancangan arsitektur database relasional MySQL dan PostgreSQL, implementasi Role-Based Access Control, hingga integrasi layanan pihak ketiga berupa payment gateway.",
       paragraph4: "Saat ini saya mencari peluang profesional untuk berkontribusi secara penuh sebagai Full-Stack Laravel Developer dalam tim engineering yang dinamis dan inovatif.",
-      programmingLanguages: "Bahasa Pemrograman",
-      databasesArchitecture: "Database & Arsitektur",
-      frameworksLibraries: "Framework & Library",
-      toolsIntegrations: "Alat & Integrasi",
+      programmingLanguages: "Frontend",
+      databasesArchitecture: "Backend & Mobile",
+      databaseTools: "Database & Tools",
       downloadCV: "Unduh Resume",
     },
     // Projects
@@ -118,6 +120,10 @@ export const translations = {
       desc3: "Mengimplementasikan sistem manajemen reservasi menggunakan framework Laravel 12 dengan arsitektur MVC. Berfokus pada pengelolaan state ketersediaan kamar secara real-time dan perancangan relasi database MySQL untuk memastikan integritas data dan mencegah anomali double-booking. Melakukan pengujian fungsional pada modul transaksi guna memastikan stabilitas aplikasi sesuai standar rekayasa perangkat lunak.",
       eduConcentration: "Konsentrasi:",
       eduGPA: "IPK Saat Ini:",
+      educationIntro: "Mahasiswa S1 Informatika di Universitas Jenderal Achmad Yani, Cimahi. Mulai kuliah sejak 2023, sekarang masih aktif dan terus belajar hal-hal baru.",
+      edu1Role: "S1 Informatika",
+      edu1Company: "Universitas Jenderal Achmad Yani, Bandung",
+      edu1Desc: "Mulai mendalami dunia pengembangan software, dari dasar pemrograman hingga fullstack web development dan mobile development.",
     },
     // Contact
     contact: {

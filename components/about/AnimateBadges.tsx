@@ -4,8 +4,10 @@ import { useAnimation, useInView, motion } from "framer-motion"
 import { useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
 
+export type SkillItem = string | { name: string; icon: string };
+
 interface AnimateBadgesProps {
-  skills: string[]
+  skills: SkillItem[]
   delay?: number
 }
 
@@ -51,15 +53,35 @@ export default function AnimateBadges({ skills, delay = 1 }: AnimateBadgesProps)
       animate={ctrls}
       className="flex flex-wrap gap-2"
     >
-      {skills.map((skill, index) => (
-        <motion.span
-          key={index}
-          variants={item}
-          className="rounded-full border border-zinc-200 bg-zinc-100/50 px-3 py-1.5 text-xs font-semibold tracking-wide text-zinc-800 shadow-sm transition-all hover:bg-zinc-200 hover:scale-105 dark:border-zinc-800 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-700 sm:text-sm"
-        >
-          {skill}
-        </motion.span>
-      ))}
+      {skills.map((skill, index) => {
+        const isObject = typeof skill === "object"
+        const name = isObject ? skill.name : skill
+        const iconSlug = isObject ? skill.icon : null
+        
+        return (
+          <motion.span
+            key={index}
+            variants={item}
+            className="flex items-center gap-2 whitespace-nowrap rounded-full border border-zinc-200 bg-zinc-100/50 px-3 py-1.5 text-xs font-semibold tracking-wide text-zinc-800 shadow-sm transition-all hover:bg-zinc-200 hover:scale-105 dark:border-zinc-800 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-700 sm:text-sm"
+          >
+            {iconSlug && (
+              <img 
+                src={iconSlug.startsWith('http') ? iconSlug : `https://cdn.simpleicons.org/${iconSlug}/black`} 
+                alt={`${name} icon`} 
+                className="w-4 h-4 dark:hidden" 
+              />
+            )}
+            {iconSlug && (
+              <img 
+                src={iconSlug.startsWith('http') ? iconSlug : `https://cdn.simpleicons.org/${iconSlug}/white`} 
+                alt={`${name} icon`} 
+                className="w-4 h-4 hidden dark:block" 
+              />
+            )}
+            {name}
+          </motion.span>
+        )
+      })}
     </motion.div>
   )
 }

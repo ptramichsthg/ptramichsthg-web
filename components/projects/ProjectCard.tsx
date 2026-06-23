@@ -48,10 +48,10 @@ export default function ProjectCard({
       initial="hidden"
       variants={projectCardAnimation}
       aria-hidden="true"
-      className="relative z-10 flex flex-col lg:flex-row min-h-[550px] w-full overflow-hidden rounded-3xl border border-foreground/20 bg-zinc-200 dark:bg-zinc-800"
+      className="relative z-10 flex flex-col lg:flex-row min-h-[400px] w-full overflow-hidden rounded-3xl border border-foreground/20 bg-zinc-200 dark:bg-zinc-800"
     >
       {/* Text Section */}
-      <div className={cn("relative flex flex-col justify-center p-8 md:p-12 lg:p-16", image === "" ? "w-full" : "w-full lg:w-1/2 order-2 lg:order-1")}>
+      <div className={cn("relative flex flex-col justify-center p-6 md:p-8 lg:p-10", image === "" ? "w-full" : "w-full lg:w-1/2 order-2 lg:order-1")}>
         <motion.div
           ref={ref}
           animate={ctrls}
@@ -78,7 +78,7 @@ export default function ProjectCard({
           </Link>
         </motion.div>
 
-        <h3 className="text-3xl font-bold leading-tight text-foreground md:text-4xl lg:text-5xl lg:leading-tight">
+        <h3 className="text-2xl font-bold leading-tight text-foreground md:text-3xl lg:text-4xl lg:leading-tight">
           <motion.span
             ref={ref}
             animate={ctrls}
@@ -131,7 +131,7 @@ export default function ProjectCard({
           initial="hidden"
           variants={projectCardImageAnimation}
           aria-hidden="true"
-          className="relative w-full min-h-[250px] sm:min-h-[350px] lg:w-1/2 lg:min-h-full order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-foreground/10"
+          className="relative w-full min-h-[200px] sm:min-h-[250px] lg:w-1/2 lg:min-h-full order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-foreground/10"
         >
           {image === "placeholder" ? (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-300 to-zinc-400 dark:from-zinc-700 dark:to-zinc-800">

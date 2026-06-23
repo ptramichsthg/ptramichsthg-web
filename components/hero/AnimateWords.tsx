@@ -40,7 +40,7 @@ export const AnimateWords = ({ title, style }: AnimateWordsProps) => {
     <h1 aria-label={title} role="heading">
       <motion.span
         ref={ref}
-        className="flex flex-col overflow-hidden text-center text-[96px] font-extrabold leading-[0.8em] text-zinc-800 dark:text-zinc-200 sm:text-[120px] sm:leading-[0.85em] md:text-[155.5px] lg:text-[215px]"
+        className="flex flex-col overflow-hidden text-center text-[14vw] font-extrabold leading-[0.8em] text-zinc-800 dark:text-zinc-200 sm:text-[120px] sm:leading-[0.85em] md:text-[155.5px] lg:text-[215px]"
       >
         {title.split(" ").map((word, index) => (
           <motion.div
