@@ -17,8 +17,8 @@ export const translations = {
       locate: "Located",
       locateIn: "in Bandung",
       locateRegion: "West Java, Indonesia",
-      marquee1: "Full-Stack Laravel Developer",
-      marquee2: "Full-Stack Laravel Developer",
+      marquee1: "PUTRA MICHAEL SITOHANG",
+      marquee2: "PUTRA MICHAEL SITOHANG",
     },
     // About
     about: {
@@ -38,7 +38,7 @@ export const translations = {
       seeOther: "See other projects",
       loadMore: "Load More",
       desc1: "An AI-based automated video processing application with asynchronous computing architecture. Integrates FFmpeg with Python's asynchronous subprocesses (asyncio) on the backend, and client-side caching mechanisms using IndexedDB for memory management.",
-      desc2: "An end-to-end course management platform with enterprise-level security. Implements a content delivery architecture using AWS S3 signed URLs and asynchronous Midtrans webhook processing for real-time transactions.",
+      desc2: "An online course marketplace platform with 3 user roles. Developed the Laravel REST API, instructor system, course management, and approval workflows.",
       desc3: "A centralized Support Ticketing System (Helpdesk) with an SPA architecture. The frontend uses Vue.js 3 and Pinia, while the backend implements Laravel 11 with Laravel Sanctum for token-based authentication. Features include tiered ticket tracking, role management (Admin/User), and real-time notifications.",
       desc4: "A full-stack e-commerce prototype focusing on architectural fundamentals. Built a Role-Based Access Control (RBAC) system and Custom JWT Authentication, and designed a RESTful API using raw MySQL queries.",
       desc5: "A collaborative information portal and blog focusing on PC hardware. Built in a team utilizing classic web fundamentals (HTML5, Vanilla CSS3, Vanilla JS) and integrated with Swiper.js for dynamic and interactive product catalog sliders.",
@@ -62,7 +62,7 @@ export const translations = {
       eduGPA: "Current GPA:",
       educationIntro: "Informatics Engineering undergraduate student at Jenderal Achmad Yani University, Cimahi. Started studying in 2023, currently active and continuously learning new things.",
       edu1Role: "B.Sc. in Informatics Engineering",
-      edu1Company: "Jenderal Achmad Yani University, Bandung",
+      edu1Company: "Jenderal Achmad Yani University, Cimahi",
       edu1Desc: "Began delving into the software development world, from programming fundamentals to fullstack web and mobile development.",
     },
     // Contact
@@ -87,8 +87,8 @@ export const translations = {
       locate: "Berlokasi",
       locateIn: "di Bandung",
       locateRegion: "Jawa Barat, Indonesia",
-      marquee1: "Full-Stack Laravel Developer",
-      marquee2: "Full-Stack Laravel Developer",
+      marquee1: "PUTRA MICHAEL SITOHANG",
+      marquee2: "PUTRA MICHAEL SITOHANG",
     },
     // About
     about: {
@@ -108,7 +108,7 @@ export const translations = {
       seeOther: "Lihat proyek lainnya",
       loadMore: "Muat Lebih",
       desc1: "Aplikasi pemrosesan video otomatis berbasis AI dengan arsitektur komputasi asinkron. Mengintegrasikan FFmpeg dengan subprocess asinkron Python (asyncio) di backend, dan mekanisme caching client-side menggunakan IndexedDB untuk manajemen memori.",
-      desc2: "Platform manajemen kursus end-to-end dengan tingkat keamanan enterprise. Mengimplementasikan arsitektur pengiriman konten menggunakan AWS S3 signed URLs dan pemrosesan asinkron webhook Midtrans untuk transaksi real-time.",
+      desc2: "Platform jual beli kursus online dengan 3 role. Mengembangkan REST API Laravel, sistem instruktur, course management, dan workflow approval.",
       desc3: "Sistem Manajemen Tiket Support (Helpdesk) terpusat dengan arsitektur SPA. Frontend menggunakan Vue.js 3 dan Pinia, sedangkan backend mengimplementasikan Laravel 11 dengan Laravel Sanctum untuk autentikasi berbasis token. Dilengkapi fitur pelacakan tiket berjenjang, manajemen peran (Admin/User), dan notifikasi real-time.",
       desc4: "Prototipe e-commerce full-stack dengan fokus pada fundamental arsitektur. Membangun sistem Role-Based Access Control (RBAC) dan Custom JWT Authentication, serta mendesain RESTful API menggunakan raw MySQL queries.",
       desc5: "E-Computer adalah portal informasi dan blog kolaboratif seputar perangkat keras (PC hardware). Dikembangkan dalam tim menggunakan fundamental web klasik (HTML5, Vanilla CSS3, Vanilla JS) dan terintegrasi dengan Swiper.js untuk interaktivitas slider katalog produk yang dinamis.",
@@ -132,7 +132,7 @@ export const translations = {
       eduGPA: "IPK Saat Ini:",
       educationIntro: "Mahasiswa S1 Informatika di Universitas Jenderal Achmad Yani, Cimahi. Mulai kuliah sejak 2023, sekarang masih aktif dan terus belajar hal-hal baru.",
       edu1Role: "S1 Informatika",
-      edu1Company: "Universitas Jenderal Achmad Yani, Bandung",
+      edu1Company: "Universitas Jenderal Achmad Yani, Cimahi",
       edu1Desc: "Mulai mendalami dunia pengembangan software, dari dasar pemrograman hingga fullstack web development dan mobile development.",
     },
     // Contact
