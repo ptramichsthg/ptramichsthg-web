@@ -11,7 +11,6 @@ import NavMenuBtn from "./NavMenuBtn"
 import NavMenuLine from "./NavMenuLine"
 import NavMenuLink from "./NavMenuLink"
 import NavMenuSocial from "./NavMenuSocial"
-import LanguageSwitcher from "./LanguageSwitcher"
 
 export default function NavMenu() {
   const [active, setActive] = useState<boolean>(false)
@@ -180,7 +179,6 @@ export default function NavMenu() {
             </MagneticEffect>
           </div>
           <div className="flex flex-col gap-2 px-[clamp(1.25rem,3vw,2.5rem)]">
-            <LanguageSwitcher />
             <ThemeSwitcher />
           </div>
         </div>
