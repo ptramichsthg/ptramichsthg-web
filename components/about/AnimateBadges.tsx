@@ -66,16 +66,9 @@ export default function AnimateBadges({ skills, delay = 1 }: AnimateBadgesProps)
           >
             {iconSlug && (
               <img 
-                src={iconSlug.startsWith('http') ? iconSlug : `https://cdn.simpleicons.org/${iconSlug}/black`} 
+                src={iconSlug.startsWith('http') ? iconSlug : `https://cdn.simpleicons.org/${iconSlug}`} 
                 alt={`${name} icon`} 
-                className="w-4 h-4 dark:hidden" 
-              />
-            )}
-            {iconSlug && (
-              <img 
-                src={iconSlug.startsWith('http') ? iconSlug : `https://cdn.simpleicons.org/${iconSlug}/white`} 
-                alt={`${name} icon`} 
-                className="w-4 h-4 hidden dark:block" 
+                className="w-4 h-4" 
               />
             )}
             {name}
