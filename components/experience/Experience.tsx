@@ -80,7 +80,7 @@ export default function Experience() {
                   </div>
                 </div>
 
-                <p className="text-sm md:text-base text-foreground/80 leading-relaxed max-w-4xl">
+                <p className="text-sm md:text-base text-foreground/80 leading-relaxed max-w-4xl text-justify">
                   {t.experience[`desc${exp.id}` as keyof typeof t.experience]}
                 </p>
 
@@ -128,7 +128,7 @@ export default function Experience() {
                   </div>
                 </div>
 
-                <p className="text-sm md:text-base text-foreground/80 leading-relaxed max-w-4xl">
+                <p className="text-sm md:text-base text-foreground/80 leading-relaxed max-w-4xl text-justify">
                   {t.experience[`edu${edu.id}Desc` as keyof typeof t.experience]}
                 </p>
               </div>

@@ -116,7 +116,7 @@ export default function ProjectCard({
           </motion.span>
         </h3>
         
-        <p className={cn("mt-4 font-medium leading-relaxed text-foreground/60", compact ? "text-sm flex-1" : "text-sm md:text-base lg:text-lg lg:w-[80%]")}>
+        <p className={cn("mt-4 font-medium leading-relaxed text-foreground/60 text-justify", compact ? "text-sm flex-1" : "text-sm md:text-base lg:text-lg lg:w-[80%]")}>
           <motion.span
             ref={ref}
             animate={ctrls}
