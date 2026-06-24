@@ -29,8 +29,8 @@ export const projects = [
     image: "placeholder",
     badge: "Academic",
     tech: ["Laravel", "Vue.js", "Tailwind CSS", "MySQL"],
-    linkProject: "#",
-    repo: "#",
+    linkProject: "https://github.com/ptramichsthg/ticktrack-fe",
+    repo: "https://github.com/ptramichsthg/ticktrack-fe",
   },
   {
     id: 4,

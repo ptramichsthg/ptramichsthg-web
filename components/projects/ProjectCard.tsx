@@ -18,6 +18,7 @@ interface ProjectCardProps {
   title: string
   description: string
   image: string
+  compact?: boolean
   badge?: string
   tech: string[]
   repo: string
@@ -28,6 +29,7 @@ export default function ProjectCard({
   title,
   description,
   image,
+  compact = false,
   badge,
   tech,
   repo,
@@ -50,33 +52,33 @@ export default function ProjectCard({
       initial="hidden"
       variants={projectCardAnimation}
       aria-hidden="true"
-      className={cn("relative z-10 flex flex-col lg:flex-row w-full overflow-hidden rounded-3xl border border-foreground/20 bg-zinc-200 dark:bg-zinc-800 transition-all duration-300 hover:border-foreground/40 hover:-translate-y-1", image === "" ? "h-full" : "min-h-[400px]")}
+      className={cn("relative z-10 flex flex-col lg:flex-row w-full overflow-hidden rounded-3xl border border-foreground/20 bg-zinc-200 dark:bg-zinc-800 transition-all duration-300 hover:border-foreground/40 hover:-translate-y-1", compact ? "h-full" : "min-h-[300px] md:min-h-[400px]")}
     >
       {/* Text Section */}
-      <div className={cn("relative flex flex-col", image === "" ? "p-6 w-full h-full" : "p-6 md:p-8 lg:p-10 w-full lg:w-1/2 justify-center order-2 lg:order-1")}>
+      <div className={cn("relative flex flex-col", compact ? "p-6 w-full h-full" : "p-6 md:p-8 lg:p-10 w-full justify-center order-2 lg:order-1", image && image !== "" ? "lg:w-1/2" : "lg:w-full")}>
         <motion.div
           ref={ref}
           animate={ctrls}
           initial="hidden"
           variants={projectCardLinksAnimation}
           aria-hidden="true"
-          className={cn("flex items-center justify-start gap-3", image === "" ? "mb-6" : "mb-8")}
+          className={cn("flex items-center justify-start gap-3", compact ? "mb-6" : "mb-8")}
         >
           <Link
             href={repo}
             target="_blank"
-            className={cn("rounded-full bg-foreground transition-all duration-300 ease-in-out hover:scale-110 hover:bg-foreground/80", image === "" ? "p-2" : "p-3")}
+            className={cn("rounded-full bg-foreground transition-all duration-300 ease-in-out hover:scale-110 hover:bg-foreground/80", compact ? "p-2" : "p-3")}
             aria-label="Open Github Repo"
           >
-            <GithubIcon className={cn("text-zinc-100 dark:text-zinc-800", image === "" ? "h-5 w-5" : "h-6 w-6")} />
+            <GithubIcon className={cn("text-zinc-100 dark:text-zinc-800", compact ? "h-5 w-5" : "h-6 w-6")} />
           </Link>
           <Link
             href={projectLink}
             target="_blank"
-            className={cn("rounded-full bg-foreground transition-all duration-300 ease-in-out hover:scale-110 hover:bg-foreground/80", image === "" ? "p-2" : "p-3")}
+            className={cn("rounded-full bg-foreground transition-all duration-300 ease-in-out hover:scale-110 hover:bg-foreground/80", compact ? "p-2" : "p-3")}
             aria-label="Open Live Demo"
           >
-            <LinkIcon className={cn("text-zinc-100 dark:text-zinc-800", image === "" ? "h-5 w-5" : "h-6 w-6")} />
+            <LinkIcon className={cn("text-zinc-100 dark:text-zinc-800", compact ? "h-5 w-5" : "h-6 w-6")} />
           </Link>
         </motion.div>
 
@@ -101,7 +103,7 @@ export default function ProjectCard({
           </motion.div>
         )}
 
-        <h3 className={cn("font-bold leading-tight text-foreground", image === "" ? "text-xl md:text-2xl" : "text-2xl md:text-3xl lg:text-4xl lg:leading-tight")}>
+        <h3 className={cn("font-bold leading-tight text-foreground", compact ? "text-xl md:text-2xl" : "text-2xl md:text-3xl lg:text-4xl lg:leading-tight")}>
           <motion.span
             ref={ref}
             animate={ctrls}
@@ -114,7 +116,7 @@ export default function ProjectCard({
           </motion.span>
         </h3>
         
-        <p className={cn("mt-4 font-medium leading-relaxed text-foreground/60", image === "" ? "text-sm flex-1" : "text-sm md:text-base lg:text-lg")}>
+        <p className={cn("mt-4 font-medium leading-relaxed text-foreground/60", compact ? "text-sm flex-1" : "text-sm md:text-base lg:text-lg lg:w-[80%]")}>
           <motion.span
             ref={ref}
             animate={ctrls}
@@ -133,12 +135,12 @@ export default function ProjectCard({
           initial="hidden"
           variants={projectCardTechAnimation}
           aria-hidden="true"
-          className={cn("flex flex-wrap gap-x-2 gap-y-2", image === "" ? "mt-6" : "mt-8 lg:mt-10")}
+          className={cn("flex flex-wrap gap-x-2 gap-y-2", compact ? "mt-6" : "mt-8 lg:mt-10")}
         >
           {tech.map((tech, index) => (
             <p
               key={index}
-              className={cn("rounded-full border border-foreground/10 bg-foreground/5 font-semibold text-foreground/80", image === "" ? "px-3 py-1 text-[10px] md:text-xs" : "px-4 py-1.5 text-xs md:text-sm")}
+              className={cn("rounded-full border border-foreground/10 bg-foreground/5 font-semibold text-foreground/80", compact ? "px-3 py-1 text-[10px] md:text-xs" : "px-4 py-1.5 text-xs md:text-sm")}
             >
               {tech}
             </p>
