@@ -40,8 +40,10 @@ export default function DownloadCV() {
       className="mt-4 flex items-center justify-start"
     >
       <MagneticEffect>
-        <div 
-          onClick={() => alert("Resume document is currently being updated and will be available soon!")}
+        <a 
+          href="/cv_putra_Michael.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="cursor-pointer"
         >
           <Button
@@ -51,7 +53,7 @@ export default function DownloadCV() {
           >
             {t.about.downloadCV}
           </Button>
-        </div>
+        </a>
       </MagneticEffect>
     </motion.div>
   )
