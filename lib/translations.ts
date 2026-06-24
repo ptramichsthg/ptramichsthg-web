@@ -46,6 +46,7 @@ export const translations = {
       desc7: "A full-stack RESTful API and frontend application for digital bookshelf management, featuring complete CRUD operations and real-time filtering. The backend is built with Node.js and Hapi.js using in-memory data, while the modern UI is styled with TailwindCSS.",
       desc8: "An enterprise-scale Desktop software system built collaboratively for digitizing daily cinema operations. Developed using Java, Java Swing (GUI), and MySQL, featuring a Back-Office module for schedule management with clash detection, and a Front-Office Point of Sale (POS) system for dynamic seat selection.",
       desc9: "A modern 2D endless runner desktop game developed collaboratively. Built entirely with Object-Oriented Java and JavaFX for rendering complex animations and parallax environments, featuring dynamic difficulty, cinematic day-night transitions, and a persistent High-Score system via Binary File I/O.",
+      desc10: "An interactive web-based recipe recommendation platform with 3 user roles (Admin, Chef, User). Developed intelligent recommendation features, chef recipe management, real-time consultation, a VIP membership system, and WhatsApp notification integration using asynchronous Laravel Queues.",
     },
     // Experience
     experience: {
@@ -116,6 +117,7 @@ export const translations = {
       desc7: "Aplikasi full-stack RESTful API dan antarmuka web untuk manajemen rak buku digital, dilengkapi operasi CRUD dan pencarian real-time. Backend dibangun menggunakan Node.js dan Hapi.js dengan penyimpanan in-memory, sementara antarmuka UI didesain menggunakan TailwindCSS.",
       desc8: "Sistem perangkat lunak Desktop berskala Enterprise untuk mendigitalisasi operasional bioskop harian yang dikembangkan secara kolaboratif. Dibangun menggunakan Java, Java Swing (GUI), dan MySQL, dengan fitur Modul Back-Office untuk manajemen jadwal (clash detection), serta sistem kasir (POS) untuk pemilihan kursi dinamis.",
       desc9: "Game desktop 2D endless runner modern yang dikembangkan secara kolaboratif. Dibangun murni menggunakan Java OOP dan JavaFX untuk merender animasi kompleks serta lingkungan parallax, dilengkapi fitur tingkat kesulitan dinamis, transisi waktu sinematik siang-malam, dan sistem penyimpanan High-Score permanen via Binary File I/O.",
+      desc10: "Platform rekomendasi resep masakan interaktif berbasis web dengan 3 role (Admin, Chef, User). Mengembangkan fitur rekomendasi cerdas, manajemen resep chef, konsultasi real-time, sistem membership VIP, dan integrasi notifikasi WhatsApp menggunakan antrian asinkron (Laravel Queue).",
     },
     // Experience
     experience: {
