@@ -52,10 +52,10 @@ export default function ProjectCard({
       initial="hidden"
       variants={projectCardAnimation}
       aria-hidden="true"
-      className={cn("relative z-10 flex flex-col lg:flex-row w-full overflow-hidden rounded-3xl border border-foreground/20 bg-zinc-200 dark:bg-zinc-800 transition-all duration-300 hover:border-foreground/40 hover:-translate-y-1", compact ? "h-full" : "min-h-[300px] md:min-h-[400px]")}
+      className={cn("relative z-10 flex flex-col lg:flex-row w-full overflow-hidden rounded-3xl border border-foreground/20 bg-zinc-200 dark:bg-zinc-800 transition-all duration-300 hover:border-foreground/40 hover:-translate-y-1", compact ? "h-full" : "min-h-[280px] md:min-h-[320px]")}
     >
       {/* Text Section */}
-      <div className={cn("relative flex flex-col", compact ? "p-6 w-full h-full" : "p-6 md:p-8 lg:p-10 w-full justify-center order-2 lg:order-1", image && image !== "" ? "lg:w-1/2" : "lg:w-full")}>
+      <div className={cn("relative flex flex-col", compact ? "p-6 w-full h-full" : "p-6 md:p-8 w-full justify-center order-2 lg:order-1", image && image !== "" ? "lg:w-1/2" : "lg:w-full")}>
         <motion.div
           ref={ref}
           animate={ctrls}
@@ -103,7 +103,7 @@ export default function ProjectCard({
           </motion.div>
         )}
 
-        <h3 className={cn("font-bold leading-tight text-foreground", compact ? "text-xl md:text-2xl" : "text-2xl md:text-3xl lg:text-4xl lg:leading-tight")}>
+        <h3 className={cn("font-bold leading-tight text-foreground", compact ? "text-xl md:text-2xl" : "text-2xl md:text-3xl lg:leading-tight")}>
           <motion.span
             ref={ref}
             animate={ctrls}

@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 import gsap from "gsap"
 import { useEffect, useRef, useState } from "react"
 import ThemeSwitcher from "../ThemeSwitcher"
+import LanguageSwitcher from "../LanguageSwitcher"
 import MagneticEffect from "../providers/MagneticEffect"
 import { useLanguage } from "../providers/LanguageProvider"
 import NavMenuBtn from "./NavMenuBtn"
@@ -178,8 +179,11 @@ export default function NavMenu() {
               />
             </MagneticEffect>
           </div>
-          <div className="flex flex-col gap-2 px-[clamp(1.25rem,3vw,2.5rem)]">
-            <ThemeSwitcher />
+          <div className="flex flex-col gap-2 px-[clamp(1.25rem,3vw,2.5rem)] mt-4 items-start">
+            <div className="flex gap-4">
+              <ThemeSwitcher />
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </div>

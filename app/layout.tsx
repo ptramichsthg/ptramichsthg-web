@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   description:
     "A passionate Full-Stack Software Engineer specializing in backend architectures, API integrations, and scalable modern web interfaces.",
-  metadataBase: new URL("https://your-domain.com"),
+  metadataBase: new URL("https://putramichaelsitohang.vercel.app"),
   openGraph: {
     title: {
       template: "Putra Michael Sitohang | %s",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     },
     description:
       "A passionate Full-Stack Software Engineer specializing in backend architectures, API integrations, and scalable modern web interfaces.",
-    url: "https://your-domain.com",
+    url: "https://putramichaelsitohang.vercel.app",
     siteName: "Putra Michael Sitohang",
     locale: "en_US",
     type: "website",
