@@ -25,6 +25,15 @@ interface ProjectCardProps {
   projectLink: string
 }
 
+const techIconMap: Record<string, string> = {
+  "react.js": "react", "typescript": "typescript", "python": "python", "fastapi": "fastapi",
+  "laravel": "laravel", "vue.js": "vuedotjs", "tailwind css": "tailwindcss", "mysql": "mysql",
+  "vite": "vite", "html5": "html5", "css3": "css", "aws s3": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+  "javascript": "javascript", "swiper.js": "swiper", "php": "php", "bootstrap 5": "bootstrap",
+  "fontawesome": "fontawesome", "node.js": "nodedotjs", "java": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+  "apache ant": "apacheant", "supabase": "supabase", "docker": "docker"
+};
+
 export default function ProjectCard({
   title,
   description,
@@ -137,14 +146,29 @@ export default function ProjectCard({
           aria-hidden="true"
           className={cn("flex flex-wrap gap-x-2 gap-y-2", compact ? "mt-6" : "mt-8 lg:mt-10")}
         >
-          {tech.map((tech, index) => (
-            <p
-              key={index}
-              className={cn("rounded-full border border-foreground/10 bg-foreground/5 font-semibold text-foreground/80", compact ? "px-3 py-1 text-[10px] md:text-xs" : "px-4 py-1.5 text-xs md:text-sm")}
-            >
-              {tech}
-            </p>
-          ))}
+          {tech.map((techItem, index) => {
+            const iconSlug = techIconMap[techItem.toLowerCase()];
+            return (
+              <div
+                key={index}
+                title={techItem}
+                className={cn(
+                  "flex items-center justify-center rounded-full border border-foreground/10 bg-foreground/5 transition-colors hover:bg-foreground/10",
+                  iconSlug ? "p-2" : (compact ? "px-3 py-1 text-[10px] md:text-xs font-semibold text-foreground/80" : "px-4 py-1.5 text-xs md:text-sm font-semibold text-foreground/80")
+                )}
+              >
+                {iconSlug ? (
+                  <img
+                    src={iconSlug.startsWith("http") ? iconSlug : `https://cdn.simpleicons.org/${iconSlug}`}
+                    alt={techItem}
+                    className={cn(compact ? "h-4 w-4" : "h-5 w-5")}
+                  />
+                ) : (
+                  techItem
+                )}
+              </div>
+            )
+          })}
         </motion.div>
       </div>
 

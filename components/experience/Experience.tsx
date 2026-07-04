@@ -5,6 +5,16 @@ import { useLanguage } from "../providers/LanguageProvider"
 import { motion, useAnimation, useInView } from "framer-motion"
 import { useEffect, useRef } from "react"
 import { Briefcase, MapPin, Calendar, GraduationCap } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+const techIconMap: Record<string, string> = {
+  "react.js": "react", "typescript": "typescript", "python": "python", "fastapi": "fastapi",
+  "laravel": "laravel", "vue.js": "vuedotjs", "tailwind css": "tailwindcss", "mysql": "mysql",
+  "vite": "vite", "html5": "html5", "css3": "css", "aws s3": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+  "javascript": "javascript", "swiper.js": "swiper", "php": "php", "bootstrap 5": "bootstrap",
+  "fontawesome": "fontawesome", "node.js": "nodedotjs", "java": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+  "apache ant": "apacheant", "supabase": "supabase", "docker": "docker", "ffmpeg": "ffmpeg"
+};
 
 export default function Experience() {
   const { t } = useLanguage()
@@ -84,12 +94,30 @@ export default function Experience() {
                   {t.experience[`desc${exp.id}` as keyof typeof t.experience]}
                 </p>
 
-                <div className="mt-4 flex flex-wrap gap-x-3 gap-y-3">
-                  {exp.tech.map((techItem, i) => (
-                    <span key={i} className="rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/80">
-                      {techItem}
-                    </span>
-                  ))}
+                <div className="mt-4 flex flex-wrap gap-x-2 gap-y-2">
+                  {exp.tech.map((techItem, i) => {
+                    const iconSlug = techIconMap[techItem.toLowerCase()];
+                    return (
+                      <div
+                        key={i}
+                        title={techItem}
+                        className={cn(
+                          "flex items-center justify-center rounded-full border border-foreground/10 bg-foreground/5 transition-colors hover:bg-foreground/10",
+                          iconSlug ? "p-2" : "px-4 py-1.5 text-xs md:text-sm font-semibold text-foreground/80"
+                        )}
+                      >
+                        {iconSlug ? (
+                          <img
+                            src={iconSlug.startsWith("http") ? iconSlug : `https://cdn.simpleicons.org/${iconSlug}`}
+                            alt={techItem}
+                            className="h-5 w-5"
+                          />
+                        ) : (
+                          techItem
+                        )}
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </motion.div>

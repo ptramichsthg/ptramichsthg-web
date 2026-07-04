@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <motion.section
       id="hero"
-      className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center"
+      className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-500/10 via-background to-background"
       initial="initial"
       animate="animate"
     >

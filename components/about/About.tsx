@@ -74,7 +74,7 @@ export default function About() {
                   { name: "Laravel", icon: "laravel" },
                   { name: "PHP", icon: "php" },
                   { name: "Python", icon: "python" },
-                  { name: "Java", icon: "java" },
+                  { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
                   { name: "Android Native", icon: "android" }
                 ]}
                 delay={1.3}
