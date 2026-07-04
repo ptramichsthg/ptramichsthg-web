@@ -25,11 +25,23 @@ interface ProjectCardProps {
   projectLink: string
 }
 
+// Tech Icon Map
+const techIconMap: Record<string, string> = {
+  "react": "react", "react.js": "react", "typescript": "typescript", "python": "python", "fastapi": "fastapi",
+  "laravel": "laravel", "vue.js": "vuedotjs", "tailwind css": "tailwindcss", "tailwind": "tailwindcss", "mysql": "mysql",
+  "vite": "vite", "html5": "html5", "css3": "css", "aws s3": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+  "javascript": "javascript", "swiper.js": "swiper", "php": "php", "bootstrap 5": "bootstrap",
+  "fontawesome": "fontawesome", "node.js": "nodedotjs", "java": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+  "apache ant": "apacheant", "supabase": "supabase", "docker": "docker", "ffmpeg": "ffmpeg",
+  "vercel": "vercel", "framer motion": "framer"
+}
+
 // Gradient presets per badge
 const gradientMap: Record<string, string> = {
   freelance: "from-violet-600 via-indigo-700 to-purple-900",
   academic:  "from-slate-600 via-slate-700 to-zinc-900",
   bootcamp:  "from-emerald-500 via-teal-600 to-cyan-800",
+  "web design": "from-amber-500 via-orange-600 to-rose-700",
 }
 
 // Badge label color
@@ -37,6 +49,7 @@ const badgeColorMap: Record<string, string> = {
   freelance: "text-violet-500 dark:text-violet-400",
   academic:  "text-sky-500 dark:text-sky-400",
   bootcamp:  "text-emerald-500 dark:text-emerald-400",
+  "web design": "text-amber-500 dark:text-amber-400",
 }
 
 export default function ProjectCard({
@@ -204,19 +217,34 @@ export default function ProjectCard({
           {description}
         </motion.p>
 
-        {/* Tech pills — text-based like reference image */}
+        {/* Tech tags — icon-based */}
         <motion.div
           variants={projectCardTechAnimation}
           className="flex flex-wrap gap-2 pt-1"
         >
-          {tech.map((techItem, index) => (
-            <span
-              key={index}
-              className="inline-flex items-center rounded-full border border-foreground/20 bg-transparent px-3 py-1 text-xs font-semibold text-foreground/70 hover:border-foreground/40 hover:text-foreground transition-colors"
-            >
-              {techItem}
-            </span>
-          ))}
+          {tech.map((techItem, index) => {
+            const iconSlug = techIconMap[techItem.toLowerCase()];
+            return (
+              <div
+                key={index}
+                title={techItem}
+                className={cn(
+                  "flex items-center justify-center rounded-full border border-foreground/10 bg-foreground/5 transition-colors hover:bg-foreground/10",
+                  iconSlug ? "p-2" : "px-3 py-1 text-xs font-semibold text-foreground/70"
+                )}
+              >
+                {iconSlug ? (
+                  <img
+                    src={iconSlug.startsWith("http") ? iconSlug : `https://cdn.simpleicons.org/${iconSlug}`}
+                    alt={techItem}
+                    className={cn(compact ? "h-4 w-4" : "h-5 w-5")}
+                  />
+                ) : (
+                  techItem
+                )}
+              </div>
+            )
+          })}
         </motion.div>
       </div>
     </motion.div>
