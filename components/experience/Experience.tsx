@@ -53,7 +53,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="mx-auto flex w-[90%] flex-col items-center justify-center lg:max-w-[1212.8px] z-[20] mt-24"
+      className="mx-auto flex w-[90%] flex-col items-center justify-center lg:max-w-[1212.8px] z-[20] mt-8 md:mt-24"
     >
       <motion.div
         ref={ref}

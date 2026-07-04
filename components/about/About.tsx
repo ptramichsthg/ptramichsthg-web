@@ -14,7 +14,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative mb-10 flex w-full flex-col items-center justify-center overflow-hidden py-16 md:py-24"
+      className="relative mb-0 md:mb-10 flex w-full flex-col items-center justify-center overflow-hidden py-8 md:py-24"
     >
       <div className="mx-auto flex w-[90%] flex-col items-start justify-center lg:max-w-[1212.8px]">
         <div className="mb-10 flex w-full items-center justify-between gap-x-2 md:mb-16">
