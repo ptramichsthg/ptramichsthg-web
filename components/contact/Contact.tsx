@@ -17,7 +17,7 @@ export default function Contact() {
         <div className="contact-content relative flex min-h-[100svh] w-full flex-col items-center justify-between pt-12">
           <ContactTitle title="Contact" />
           <ContactForm />
-          <div className="flex w-full flex-col md:flex-row justify-between items-center md:items-start py-12 gap-10 md:gap-4 relative">
+          <div className="flex w-full flex-col md:flex-row justify-between items-center md:items-stretch py-12 gap-10 md:gap-4 relative">
             {/* Left: Github */}
             <div className="w-full md:w-1/3 flex flex-col items-center md:items-start">
               <p className="mb-4 text-xl font-semibold text-zinc-200 dark:text-zinc-800">
@@ -37,11 +37,7 @@ export default function Contact() {
 
             {/* Center: Verse & Copyright */}
             <div className="w-full md:w-1/3 flex flex-col items-center justify-end text-center order-last md:order-none mt-8 md:mt-0">
-              <p className="text-xs italic font-medium text-zinc-400 dark:text-zinc-500 max-w-[400px] leading-relaxed mb-3">
-                &quot;Janganlah takut, sebab Aku menyertai engkau, janganlah bimbang, sebab Aku ini Allahmu; Aku akan meneguhkan, bahkan akan menolong engkau; Aku akan memegang engkau dengan tangan kanan-Ku yang membawa kemenangan.&quot;
-                <br />
-                — Yesaya 41:10
-              </p>
+
               <p className="text-xs font-medium text-zinc-400 dark:text-zinc-500">
                 © {new Date().getFullYear()} Putra Michael Sitohang. <br className="md:hidden" /> Built with Next.js.
               </p>
