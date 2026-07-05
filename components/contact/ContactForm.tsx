@@ -1,11 +1,10 @@
 "use client"
 
-import { formSubmission } from "@/actions/formAction"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Loader, Mail } from "lucide-react"
-import { useRef } from "react"
-import { useFormState, useFormStatus } from "react-dom"
+import { useRef, useState } from "react"
+import emailjs from "@emailjs/browser"
 import MagneticEffect from "../providers/MagneticEffect"
 import { Button } from "../ui/button"
 import ContactFormLine from "./ContactFormLine"
@@ -14,14 +13,12 @@ import useIsomorphicLayoutEffect from "@/hooks/UseIsomorphicLayoutEffect"
 export default function ContactForm() {
   const el = useRef<HTMLDivElement | null>(null)
   const formEl = useRef<HTMLFormElement | null>(null)
-  const { pending } = useFormStatus()
-  const [state, formAction] = useFormState(formSubmission, {
-    errors: {
-      email: false,
-      name: false,
-      message: false,
-      subject: false,
-    },
+  const [pending, setPending] = useState(false)
+  const [errors, setErrors] = useState({
+    email: false,
+    name: false,
+    message: false,
+    subject: false,
   })
 
   useIsomorphicLayoutEffect(() => {
@@ -42,8 +39,6 @@ export default function ContactForm() {
     )
   }, [])
 
-  const { errors } = state
-
   const handleFocus = (inputId: number) => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -60,26 +55,57 @@ export default function ContactForm() {
     return () => ctx.revert()
   }
 
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (!formEl.current) return
+
+    const formData = new FormData(formEl.current)
+    const email = formData.get("email") as string
+    const name = formData.get("name") as string
+    const subject = formData.get("subject") as string
+    const message = formData.get("message") as string
+
+    const newErrors = {
+      email: !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
+      name: !name || name.trim().length < 2,
+      subject: !subject || subject.trim().length < 2,
+      message: !message || message.trim().length < 3,
+    }
+
+    setErrors(newErrors)
+
+    if (Object.values(newErrors).some((err) => err)) {
+      return
+    }
+
+    setPending(true)
+
+    // Konfigurasi EmailJS (Service ID, Template ID, Public Key)
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID"
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID"
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY"
+
+    emailjs.sendForm(serviceID, templateID, formEl.current, publicKey).then(
+      () => {
+        setPending(false)
+        formEl.current?.reset()
+        alert("Pesan berhasil terkirim!")
+      },
+      (error) => {
+        setPending(false)
+        console.error("FAILED...", error.text)
+        alert("Gagal mengirim pesan, silakan coba lagi.")
+      }
+    )
+  }
+
   return (
     <div
       ref={el}
       className="mx-auto mb-12 flex w-full max-w-[90rem] flex-col gap-3 text-4xl"
     >
-      <form
-        ref={formEl}
-        action={async function (formData) {
-          await formAction(formData)
-
-          if (
-            errors.email === false &&
-            errors.name === false &&
-            errors.message === false &&
-            errors.subject === false
-          ) {
-            formEl.current?.reset()
-          }
-        }}
-      >
+      <form ref={formEl} onSubmit={sendEmail}>
         <div className="group">
           <div className="relative overflow-hidden">
             <input
@@ -128,7 +154,7 @@ export default function ContactForm() {
             />
             <ContactFormLine inputId={3} hasError={errors.subject} />
           </div>
-          {errors.email && (
+          {errors.subject && (
             <span className="block text-sm font-light text-red-500 lg:text-base">
               Please enter a valid subject
             </span>
@@ -151,7 +177,7 @@ export default function ContactForm() {
           )}
         </div>
         <Button
-          aria-disabled={pending}
+          disabled={pending}
           variant="outline"
           size="lg"
           className="mt-6"

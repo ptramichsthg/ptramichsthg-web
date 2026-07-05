@@ -9,6 +9,7 @@ import LanguageSwitcher from "../LanguageSwitcher"
 import MagneticEffect from "../providers/MagneticEffect"
 import { useLanguage } from "../providers/LanguageProvider"
 import NavMenuBtn from "./NavMenuBtn"
+import LoginBtn from "./LoginBtn"
 import NavMenuLine from "./NavMenuLine"
 import NavMenuLink from "./NavMenuLink"
 import NavMenuSocial from "./NavMenuSocial"
@@ -187,6 +188,7 @@ export default function NavMenu() {
           </div>
         </div>
       </div>
+      <LoginBtn />
       <NavMenuBtn active={active} toggleHamburger={toggleHamburger} />
     </>
   )
