@@ -38,7 +38,8 @@ export default function InputField({
   icon,
   rightElement,
   delay = 0,
-}: InputFieldProps) {
+  hideLabel = false,
+}: InputFieldProps & { hideLabel?: boolean }) {
   return (
     <motion.div
       className="flex flex-col gap-1.5"
@@ -49,15 +50,20 @@ export default function InputField({
     >
       <label
         htmlFor={id}
-        className="text-sm font-medium text-foreground tracking-wide"
+        className={cn(
+          "text-sm font-medium text-foreground tracking-wide",
+          hideLabel && "sr-only"
+        )}
       >
         {label}
       </label>
       <div className="relative group">
         {/* Left icon */}
-        <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-foreground transition-colors duration-200 pointer-events-none">
-          {icon}
-        </div>
+        {icon && (
+          <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-foreground transition-colors duration-200 pointer-events-none">
+            {icon}
+          </div>
+        )}
 
         <input
           id={id}
@@ -70,12 +76,13 @@ export default function InputField({
           aria-invalid={!!error}
           aria-describedby={error ? `${id}-error` : undefined}
           className={cn(
-            "w-full rounded-xl border bg-background px-4 py-3.5 pl-10 text-sm text-foreground placeholder:text-muted-foreground",
+            "w-full rounded-xl border bg-background/50 px-4 py-4 text-sm text-foreground placeholder:text-muted-foreground font-medium",
             "outline-none transition-all duration-200",
             "focus:ring-1",
+            icon ? "pl-10" : "pl-4",
             error
               ? "border-destructive focus:border-destructive focus:ring-destructive/30"
-              : "border-input focus:border-primary focus:ring-primary/20 hover:border-muted-foreground/30"
+              : "border-border focus:border-primary focus:ring-primary/20 hover:border-muted-foreground/30"
           )}
         />
 

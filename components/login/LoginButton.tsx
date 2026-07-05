@@ -12,7 +12,7 @@ interface LoginButtonProps {
 
 export default function LoginButton({
   isLoading,
-  label = "Masuk",
+  label = "Sign in",
   delay = 0,
 }: LoginButtonProps) {
   return (
@@ -33,7 +33,7 @@ export default function LoginButton({
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
           isLoading ? "cursor-not-allowed opacity-70" : "cursor-pointer"
         )}
-        aria-label={isLoading ? "Sedang memproses..." : label}
+        aria-label={isLoading ? "Processing..." : label}
       >
         <span className="flex items-center justify-center gap-2">
           {isLoading && (
@@ -45,7 +45,7 @@ export default function LoginButton({
               <Loader2 size={16} className="animate-spin" aria-hidden="true" />
             </motion.span>
           )}
-          {isLoading ? "Memproses..." : label}
+          {isLoading ? "Processing..." : label}
         </span>
       </motion.button>
     </motion.div>
