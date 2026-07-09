@@ -41,7 +41,7 @@ export default function DownloadCV() {
     >
       <MagneticEffect>
         <a 
-          href="/CV_Putra_Michael%202.pdf"
+          href="/cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-pointer"
