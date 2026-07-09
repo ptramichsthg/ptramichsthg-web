@@ -4,7 +4,7 @@ export const projects = [
     slug: "build-a-new-you",
     title: "Build A New You",
     descKey: "desc2",
-    image: "placeholder",
+    image: "/images/build-a-new-you.png",
     badge: "Freelance",
     category: "E-Learning",
     tech: ["Laravel", "Vue.js", "MySQL", "AWS S3"],

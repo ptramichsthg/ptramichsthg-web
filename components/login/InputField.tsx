@@ -76,13 +76,13 @@ export default function InputField({
           aria-invalid={!!error}
           aria-describedby={error ? `${id}-error` : undefined}
           className={cn(
-            "w-full rounded-xl border bg-background/50 px-4 py-4 text-sm text-foreground placeholder:text-muted-foreground font-medium",
+            "w-full rounded-xl border bg-background px-4 py-4 text-sm font-medium text-foreground placeholder:text-muted-foreground",
             "outline-none transition-all duration-200",
-            "focus:ring-1",
+            "focus:ring-2 focus:ring-offset-0",
             icon ? "pl-10" : "pl-4",
             error
-              ? "border-destructive focus:border-destructive focus:ring-destructive/30"
-              : "border-border focus:border-primary focus:ring-primary/20 hover:border-muted-foreground/30"
+              ? "border-destructive focus:border-destructive focus:ring-destructive/20"
+              : "border-input hover:border-muted-foreground/30 focus:border-primary focus:ring-primary/20"
           )}
         />
 

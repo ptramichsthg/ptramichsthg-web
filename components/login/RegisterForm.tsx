@@ -35,25 +35,34 @@ const alertVariants = {
 
 
 
-// ─── Main Login Form ──────────────────────────────────────────────────────────
-export default function LoginForm() {
+// ─── Main Register Form ──────────────────────────────────────────────────────────
+export default function RegisterForm() {
   const router = useRouter()
+  const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [rememberMe, setRememberMe] = useState(false)
+  const [confirmPassword, setConfirmPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({})
+  const [errors, setErrors] = useState<{ name?: string; email?: string; password?: string; confirmPassword?: string }>({})
   const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">("idle")
   const [statusMessage, setStatusMessage] = useState("")
 
   // ── Validation ──────────────────────────────────────────────────────────────
   const validate = () => {
-    const newErrors: { email?: string; password?: string } = {}
+    const newErrors: { name?: string; email?: string; password?: string; confirmPassword?: string } = {}
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    
+    if (!name.trim()) newErrors.name = "Name is required."
+    
     if (!email.trim()) newErrors.email = "Email address is required."
     else if (!emailRegex.test(email)) newErrors.email = "Invalid email format."
+    
     if (!password) newErrors.password = "Password is required."
     else if (password.length < 6) newErrors.password = "Password must be at least 6 characters."
+    
+    if (!confirmPassword) newErrors.confirmPassword = "Please confirm your password."
+    else if (password !== confirmPassword) newErrors.confirmPassword = "Passwords do not match."
+    
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
@@ -65,21 +74,16 @@ export default function LoginForm() {
     setIsLoading(true)
     setFormStatus("idle")
     try {
+      // Dummy API Call
       await new Promise((res) => setTimeout(res, 1800))
-      if (email === "admin@portfolio.com" && password === "admin123") {
-        setFormStatus("success")
-        setStatusMessage("Sign in successful! Redirecting...")
-        // Set dummy session cookie for middleware
-        document.cookie = `session-admin=true; path=/; max-age=${rememberMe ? 604800 : 86400}`
-        
-        // Tunggu sebentar agar user bisa melihat pesan sukses, lalu redirect
-        setTimeout(() => {
-          router.push("/administrator/dashboard")
-        }, 1000)
-      } else {
-        setFormStatus("error")
-        setStatusMessage("Invalid email or password. Please try again.")
-      }
+      setFormStatus("success")
+      setStatusMessage("Account created successfully! Redirecting to login...")
+      
+      // Redirect back to login after success
+      setTimeout(() => {
+        router.push("/administrator")
+      }, 1500)
+      
     } catch {
       setFormStatus("error")
       setStatusMessage("A network error occurred. Please try again.")
@@ -114,10 +118,10 @@ export default function LoginForm() {
             className="mb-8 text-center"
           >
             <h1 className="text-3xl font-extrabold uppercase tracking-tight text-foreground">
-              SIGN IN
+              CREATE ACCOUNT
             </h1>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground/80">
-              Restricted access for Administrator. This page is used to manage the Portfolio CMS.
+              Register a new administrator account for the Portfolio CMS.
             </p>
           </motion.div>
 
@@ -150,10 +154,28 @@ export default function LoginForm() {
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-4"
             noValidate
-            aria-label="CMS Login Form"
+            aria-label="CMS Register Form"
           >
+            {/* Name */}
+            <InputField
+              id="name"
+              label="Name"
+              type="text"
+              placeholder="Name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value)
+                if (errors.name) setErrors((p) => ({ ...p, name: undefined }))
+              }}
+              error={errors.name}
+              autoComplete="name"
+              icon={null as any}
+              hideLabel={true}
+              delay={0.34}
+            />
+
             {/* Email */}
             <InputField
               id="email"
@@ -169,7 +191,7 @@ export default function LoginForm() {
               autoComplete="email"
               icon={null as any}
               hideLabel={true}
-              delay={0.36}
+              delay={0.38}
             />
 
             {/* Password */}
@@ -184,19 +206,39 @@ export default function LoginForm() {
                 if (errors.password) setErrors((p) => ({ ...p, password: undefined }))
               }}
               error={errors.password}
-              autoComplete="current-password"
+              autoComplete="new-password"
               icon={null as any}
               hideLabel={true}
-              delay={0.44}
+              delay={0.42}
             />
 
-            <LoginButton isLoading={isLoading} />
+            {/* Confirm Password */}
+            <InputField
+              id="confirm-password"
+              label="Confirm password"
+              type="password"
+              placeholder="Confirm password"
+              value={confirmPassword}
+              onChange={(e) => {
+                setConfirmPassword(e.target.value)
+                if (errors.confirmPassword) setErrors((p) => ({ ...p, confirmPassword: undefined }))
+              }}
+              error={errors.confirmPassword}
+              autoComplete="new-password"
+              icon={null as any}
+              hideLabel={true}
+              delay={0.46}
+            />
+
+            <div className="mt-2">
+              <LoginButton isLoading={isLoading} delay={0.52} label="Register" />
+            </div>
 
             {/* Divider */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.45, delay: 0.6 }}
+              transition={{ duration: 0.45, delay: 0.58 }}
               className="relative flex items-center py-2"
             >
               <div className="flex-grow border-t border-border"></div>
@@ -209,11 +251,11 @@ export default function LoginForm() {
               type="button"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.65 }}
+              transition={{ duration: 0.45, delay: 0.62 }}
               whileHover={{ scale: 1.015 }}
               whileTap={{ scale: 0.985 }}
               className="flex w-full items-center justify-center gap-3 rounded-xl border border-border bg-background/50 px-4 py-3.5 text-sm font-semibold text-foreground transition-colors duration-200 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              aria-label="Sign in with Google"
+              aria-label="Register with Google"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -221,44 +263,29 @@ export default function LoginForm() {
                 <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
                 <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
               </svg>
-              Sign in with Google
+              Register with Google
             </motion.button>
             
-            {/* Register Link */}
+            {/* Login Link */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.45, delay: 0.7 }}
-              className="mt-1 text-center"
+              transition={{ duration: 0.45, delay: 0.68 }}
+              className="mt-2 text-center"
             >
-              <span className="text-sm text-muted-foreground">No account yet? </span>
+              <span className="text-sm text-muted-foreground">Already have an account? </span>
               <Link
-                href="/register"
+                href="/administrator"
                 className="text-sm font-semibold text-foreground hover:underline transition-colors duration-200"
               >
-                Register
+                Sign in
               </Link>
             </motion.div>
           </form>
 
         </div>
 
-        {/* Kembali ke Portfolio */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.45, delay: 0.74 }}
-          className="mt-8 flex justify-center"
-        >
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground/70 hover:text-foreground transition-colors duration-200"
-            aria-label="Back to Portfolio homepage"
-          >
-            <ArrowLeft size={14} aria-hidden="true" />
-            <span>Back to Portfolio</span>
-          </Link>
-        </motion.div>
+
       </motion.div>
     </motion.main>
   )
