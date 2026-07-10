@@ -5,6 +5,7 @@ import ContactLink from "./ContactLink"
 import ContactTitle from "./ContactTitle"
 import ContactForm from "./ContactForm"
 import ContactRounded from "./ContactRounded"
+import VisitorStats from "../VisitorStats"
 
 export default function Contact() {
   return (
@@ -35,9 +36,9 @@ export default function Contact() {
               </Link>
             </div>
 
-            {/* Center: Verse & Copyright */}
-            <div className="w-full md:w-1/3 flex flex-col items-center justify-end text-center order-last md:order-none mt-8 md:mt-0">
-
+            {/* Center: Visitor Stats & Copyright */}
+            <div className="w-full md:w-1/3 flex flex-col items-center justify-between text-center order-last md:order-none mt-8 md:mt-0 gap-y-8">
+              <VisitorStats />
               <p className="text-xs font-medium text-zinc-400 dark:text-zinc-500">
                 © {new Date().getFullYear()} Putra Michael Sitohang. <br className="md:hidden" /> Built with Next.js.
               </p>

@@ -1,9 +1,10 @@
 "use client"
 
 import { createContext, useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 
 export const SmoothScrollContext = createContext({
-  scroll: null as LocomotiveScroll | null,
+  scroll: null as any,
 })
 
 interface SmoothScrollProviderProps {
@@ -15,9 +16,27 @@ export const SmoothScrollProvider = ({
   children,
   options,
 }: SmoothScrollProviderProps) => {
-  const [scroll, setScroll] = useState<LocomotiveScroll | null>(null)
+  const [scroll, setScroll] = useState<any>(null)
+  const pathname = usePathname()
+
+  // Hancurkan scroll instance saat berpindah halaman
+  useEffect(() => {
+    if (scroll) {
+      try {
+        if (typeof scroll.destroy === "function") {
+          scroll.destroy()
+        }
+      } catch (error) {
+        console.warn("SmoothScrollProvider: Error destroying scroll instance", error)
+      }
+      setScroll(null)
+    }
+  }, [pathname])
 
   useEffect(() => {
+    const container = document.querySelector("[data-scroll-container]")
+    if (!container) return
+
     if (!scroll) {
       ;(async () => {
         try {
@@ -25,24 +44,25 @@ export const SmoothScrollProvider = ({
 
           setScroll(
             new LocomotiveScroll({
-              el: document.querySelector("[data-scroll-container]"),
+              el: container,
               ...options,
             })
           )
         } catch (error) {
-          throw Error(`[SmoothScrollProvider]: ${error}`)
+          console.error("SmoothScrollProvider initialization failed:", error)
         }
       })()
     }
 
     return () => {
-      try {
-        if (scroll && typeof scroll.destroy === "function") {
-          scroll.destroy()
+      if (scroll) {
+        try {
+          if (typeof scroll.destroy === "function") {
+            scroll.destroy()
+          }
+        } catch (error) {
+          console.warn("SmoothScrollProvider cleanup: Error destroying scroll instance", error)
         }
-      } catch (error) {
-        // Suppress internal locomotive scroll destroy errors during fast refresh
-        console.warn("SmoothScrollProvider: Error destroying scroll instance", error)
       }
     }
   }, [options, scroll])
@@ -57,3 +77,4 @@ export const SmoothScrollProvider = ({
     </SmoothScrollContext.Provider>
   )
 }
+
