@@ -37,7 +37,7 @@ export default function DownloadCV() {
       animate={ctrls}
       initial="hidden"
       variants={animation}
-      className="mt-4 flex items-center justify-start"
+      className="mt-4 flex items-center justify-start hidden"
     >
       <MagneticEffect>
         <a 
