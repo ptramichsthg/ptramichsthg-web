@@ -62,7 +62,9 @@ export default function About() {
                   { name: "Vue.js", icon: "vuedotjs" },
                   { name: "Tailwind CSS", icon: "tailwindcss" },
                   { name: "Framer Motion", icon: "framer" },
-                  { name: "Vite", icon: "vite" }
+                  { name: "Vite", icon: "vite" },
+                  { name: "React Router DOM", icon: "reactrouter" },
+                  { name: "Axios", icon: "axios" }
                 ]}
                 delay={0.8}
               />
@@ -75,7 +77,8 @@ export default function About() {
                   { name: "PHP", icon: "php" },
                   { name: "Python", icon: "python" },
                   { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
-                  { name: "Android Native", icon: "android" }
+                  { name: "Android Native", icon: "android" },
+                  { name: "Go (Golang)", icon: "go" }
                 ]}
                 delay={1.3}
               />
@@ -85,6 +88,7 @@ export default function About() {
               <AnimateBadges
                 skills={[
                   { name: "MySQL", icon: "mysql" },
+                  { name: "PostgreSQL", icon: "postgresql" },
                   { name: "Supabase", icon: "supabase" },
                   { name: "MongoDB", icon: "mongodb" },
                   { name: "Git", icon: "git" },
