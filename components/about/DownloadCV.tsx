@@ -20,14 +20,14 @@ export default function DownloadCV() {
 
   const animation = {
     hidden: { opacity: 0, y: `1em` },
-    visible: { 
-      opacity: 1, 
-      y: `0em`, 
-      transition: { 
-        duration: 1.8, 
-        delay: 2.8, 
-        ease: [0.2, 0.65, 0.3, 0.9] 
-      } 
+    visible: {
+      opacity: 1,
+      y: `0em`,
+      transition: {
+        duration: 1.8,
+        delay: 2.8,
+        ease: [0.2, 0.65, 0.3, 0.9]
+      }
     }
   }
 
@@ -40,7 +40,7 @@ export default function DownloadCV() {
       className="mt-4 flex items-center justify-start hidden"
     >
       <MagneticEffect>
-        <a 
+        <a
           href="/cv.pdf"
           target="_blank"
           rel="noopener noreferrer"

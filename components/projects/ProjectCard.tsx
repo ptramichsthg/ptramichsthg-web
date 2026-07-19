@@ -30,10 +30,11 @@ const techIconMap: Record<string, string> = {
   "react": "react", "react.js": "react", "typescript": "typescript", "python": "python", "fastapi": "fastapi",
   "laravel": "laravel", "vue.js": "vuedotjs", "tailwind css": "tailwindcss", "tailwind": "tailwindcss", "mysql": "mysql",
   "vite": "vite", "html5": "html5", "css3": "css", "aws s3": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-  "javascript": "javascript", "swiper.js": "swiper", "php": "php", "bootstrap 5": "bootstrap",
+  "javascript": "javascript", "swiper.js": "swiper", "php": "php", "bootstrap 5": "bootstrap", "bootstrap": "bootstrap",
   "fontawesome": "fontawesome", "node.js": "nodedotjs", "java": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
   "apache ant": "apacheant", "supabase": "supabase", "docker": "docker", "ffmpeg": "ffmpeg",
-  "vercel": "vercel", "framer motion": "framer"
+  "vercel": "vercel", "framer motion": "framer", "android studio": "androidstudio", "codeigniter": "codeigniter",
+  "next.js": "nextdotjs", "blade": "laravel", "go": "go"
 }
 
 // Gradient presets per badge
