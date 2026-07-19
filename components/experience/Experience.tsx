@@ -82,7 +82,7 @@ export default function Experience() {
                 <div className="flex flex-wrap gap-4 text-sm font-medium text-foreground/50 mt-1 mb-4">
                   <div className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
-                    <span>{exp.date.includes("Present") || exp.date.includes("Sekarang") ? exp.date.split(" ")[0] + " - " + t.experience.present : exp.date}</span>
+                    <span>{exp.date.includes("Present") || exp.date.includes("Sekarang") ? exp.date.replace(/Present|Sekarang/g, t.experience.present) : exp.date}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <MapPin className="h-4 w-4" />
@@ -148,7 +148,7 @@ export default function Experience() {
                 <div className="flex flex-wrap gap-4 text-sm font-medium text-foreground/50 mt-1 mb-4">
                   <div className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
-                    <span>{edu.date.includes("Present") || edu.date.includes("Sekarang") ? edu.date.split(" ")[0] + " - " + t.experience.present : edu.date}</span>
+                    <span>{edu.date.includes("Present") || edu.date.includes("Sekarang") ? edu.date.replace(/Present|Sekarang/g, t.experience.present) : edu.date}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <MapPin className="h-4 w-4" />

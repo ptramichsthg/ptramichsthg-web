@@ -98,21 +98,21 @@ export const translations = {
       title: "Experience",
       education: "Education",
       present: "Present",
-      role1: "Full-Stack Software Engineer",
+      role1: "Freelance Fullstack Developer",
       desc1:
-        "Automated AI video processing app with asynchronous Python backend and FFmpeg.",
+        "Developed a REST API for a multi-role online course platform (User, Instructor, Admin), instructor management system, course management, workflow approval, and frontend interface development.",
       role2: "Software Engineer",
       desc2:
-        "Interactive e-learning platform with online courses, payments, and secure video distribution.",
+        "First Freelance Project Building and Developing an AI-based video editing platform supporting automated video analysis, key moment extraction, as well as editing and streaming features using React.js, TypeScript, Python, FastAPI, and FFmpeg.",
       role3: "Web Backend Developer",
       desc3:
-        "Centralized Support Ticketing System (SPA) with role management and real-time notifications.",
+        "Implemented a reservation management system using the Laravel framework with MVC architecture. Focused on real-time room availability state management and MySQL database relation design to ensure data integrity and prevent double-booking anomalies. Conducted functional testing on the transaction module to ensure application stability according to software engineering standards.",
       eduConcentration: "Concentration:",
       eduGPA: "Current GPA:",
       educationIntro:
-        "Informatics Engineering undergraduate student at Jenderal Achmad Yani University, Cimahi. Started studying in 2023, currently active and continuously learning new things.",
+        "Informatics Engineering undergraduate student at Jenderal Achmad Yani University, Bandung. Started studying in 2023, currently active and continuously learning new things.",
       edu1Role: "B.Sc. in Informatics Engineering",
-      edu1Company: "Jenderal Achmad Yani University, Cimahi",
+      edu1Company: "Jenderal Achmad Yani University, Bandung",
       edu1Desc:
         "Began delving into the software development world, from programming fundamentals to fullstack web and mobile development.",
     },
@@ -219,21 +219,21 @@ export const translations = {
       title: "Pengalaman",
       education: "Pendidikan",
       present: "Sekarang",
-      role1: "Full-Stack Software Engineer",
+      role1: "Freelance Fullstack Developer",
       desc1:
-        "Aplikasi pemrosesan video AI otomatis dengan backend Python asinkron dan FFmpeg.",
+        "Mengembangkan REST API untuk platform kursus online multi-role (User, Instructor, Admin), sistem pengelolaan instruktur, course management, workflow approval, serta pengembangan antarmuka frontend.",
       role2: "Software Engineer",
       desc2:
-        "Platform e-learning interaktif dengan kursus online, pembayaran, dan distribusi video yang aman.",
+        "Project Freelance Pertama Membangun dan Mengembangkan platform video editing berbasis AI yang mendukung analisis video otomatis, ekstraksi momen penting, serta fitur editing dan streaming menggunakan React.js, TypeScript, Python, FastAPI, dan FFmpeg.",
       role3: "Web Backend Developer",
       desc3:
-        "Sistem Helpdesk Tiket terpusat (SPA) dengan manajemen peran dan notifikasi real-time.",
+        "Mengimplementasikan sistem manajemen reservasi menggunakan framework Laravel dengan arsitektur MVC. Berfokus pada pengelolaan state ketersediaan kamar secara real-time dan perancangan relasi database MySQL untuk memastikan integritas data dan mencegah anomali double-booking. Melakukan pengujian fungsional pada modul transaksi guna memastikan stabilitas aplikasi sesuai standar rekayasa perangkat lunak.",
       eduConcentration: "Konsentrasi:",
       eduGPA: "IPK Saat Ini:",
       educationIntro:
-        "Mahasiswa S1 Informatika di Universitas Jenderal Achmad Yani, Cimahi. Mulai kuliah sejak 2023, sekarang masih aktif dan terus belajar hal-hal baru.",
+        "Mahasiswa S1 Informatika di Universitas Jenderal Achmad Yani, Bandung. Mulai kuliah sejak 2023, sekarang masih aktif dan terus belajar hal-hal baru.",
       edu1Role: "S1 Informatika",
-      edu1Company: "Universitas Jenderal Achmad Yani, Cimahi",
+      edu1Company: "Universitas Jenderal Achmad Yani, Bandung",
       edu1Desc:
         "Mulai mendalami dunia pengembangan software, dari dasar pemrograman hingga fullstack web development dan mobile development.",
     },

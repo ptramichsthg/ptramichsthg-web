@@ -1,12 +1,12 @@
 export const experiences = [
   {
     id: 1,
-    role: "Full-Stack Software Engineer",
-    company: "Build A New You (E-Learning & Bootcamp Platform)",
-    date: "10/2025 – Present",
+    role: "Freelance Fullstack Developer",
+    company: "Build A New You",
+    date: "Mar 2026 – Present",
     location: "Bandung, Indonesia",
-    description: "Mengembangkan platform e-learning berbasis Laravel dan Vue.js dengan fitur manajemen kursus, autentikasi pengguna, pembayaran online melalui Midtrans, serta distribusi video yang aman menggunakan AWS S3. Menerapkan Google OAuth dan pelacakan progres pembelajaran untuk meningkatkan pengalaman pengguna.",
-    tech: ["Laravel", "Vue.js", "MySQL", "Tailwind CSS", "AWS S3"]
+    description: "Mengembangkan REST API untuk platform kursus online multi-role (User, Instructor, Admin), sistem pengelolaan instruktur, course management, workflow approval, serta pengembangan antarmuka frontend.",
+    tech: ["Laravel", "Vue.js", "MySQL"]
   },
   {
     id: 2,
