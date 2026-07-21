@@ -39,6 +39,16 @@ export default function AnimateParagraph({
     },
   }
 
+  const parseMarkdown = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g)
+    return parts.map((part, index) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return <strong key={index} className="font-bold text-foreground">{part.slice(2, -2)}</strong>
+      }
+      return part
+    })
+  }
+
   return (
     <p className={cn("text-sm", className)}>
       <motion.span
@@ -48,7 +58,7 @@ export default function AnimateParagraph({
         animate={ctrls}
         variants={AnimationParagraph}
       >
-        {paragraph}
+        {parseMarkdown(paragraph)}
       </motion.span>
     </p>
   )

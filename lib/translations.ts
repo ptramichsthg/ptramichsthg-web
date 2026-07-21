@@ -25,13 +25,13 @@ export const translations = {
     about: {
       title: "About me",
       paragraph1:
-        "6th-semester Informatics Engineering student specializing in Data Software Engineering. Focused on designing robust backend architectures, API integrations, and developing scalable modern web interfaces.",
+        "I am a **6th-semester Informatics Engineering** student concentrating in **Data Software Engineering** with a strong passion and expertise in modern web application development. My main focus is building secure, scalable, and maintainable digital solutions through robust backend architecture design, API integration, and responsive, intuitive user interfaces.",
       paragraph2:
-        "I am a Full-Stack Developer with deep specialization in the Laravel ecosystem. I am highly passionate about building high-performance web applications, leveraging Laravel for robust backend logic and integrating it seamlessly with modern frontends like Vue.js and React.js.",
+        "As a **Full-Stack Developer**, I specialize in the **Laravel** ecosystem for backend development and utilize **Vue.js**, **React.js**, and **Next.js** to build modern and interactive web interfaces. I am also experienced in designing relational databases using **MySQL** and **PostgreSQL**, developing RESTful APIs, implementing JWT and OAuth-based authentication, and integrating third-party services such as **payment gateways**.",
       paragraph3:
-        "My experience includes designing MySQL relational database architectures, to integrating third-party services such as payment gateways.",
+        "I enjoy developing various types of applications, ranging from **company profile websites**, **information systems**, **admin dashboards**, **e-learning platforms**, to **business-oriented web applications**. In every project, I prioritize code quality, application performance, security, and user experience to deliver solutions that provide real value to users and organizations.",
       paragraph4:
-        "I am currently seeking an opportunity to contribute fully as a Full-Stack Laravel Developer within a dynamic and innovative engineering team.",
+        "I am currently open to **freelance projects**, **internships**, and **professional collaborations** in software development. I am ready to help individuals, SMEs, startups, and enterprises realize digital solutions that are modern, efficient, and aligned with business needs.",
       programmingLanguages: "Frontend",
       databasesArchitecture: "Backend & Mobile",
       databaseTools: "Database & Tools",
@@ -146,13 +146,13 @@ export const translations = {
     about: {
       title: "Tentang Saya",
       paragraph1:
-        "Mahasiswa Teknik Informatika semester 6 bidang Data Software Engineering. Berfokus pada perancangan arsitektur backend yang tangguh, integrasi API, dan pengembangan antarmuka web modern yang skalabel.",
+        "Saya adalah mahasiswa **Teknik Informatika semester 6** dengan konsentrasi **Data Software Engineering** yang memiliki minat dan keahlian dalam pengembangan aplikasi web modern. Fokus utama saya adalah membangun solusi digital yang aman, skalabel, dan mudah dipelihara melalui perancangan arsitektur backend yang andal, integrasi API, serta antarmuka pengguna yang responsif dan intuitif.",
       paragraph2:
-        "Saya adalah seorang Full-Stack Developer dengan spesialisasi mendalam pada ekosistem Laravel. Saya sangat antusias membangun aplikasi web berkinerja tinggi, memanfaatkan keandalan Laravel di sisi backend dan mengintegrasikannya dengan antarmuka dinamis seperti Vue.js maupun React.js.",
+        "Sebagai **Full-Stack Developer**, saya memiliki spesialisasi pada ekosistem **Laravel** untuk pengembangan backend dan memanfaatkan **Vue.js**, **React.js**, serta **Next.js** dalam membangun antarmuka web yang modern dan interaktif. Saya juga berpengalaman dalam merancang database relasional menggunakan **MySQL** dan **PostgreSQL**, mengembangkan RESTful API, mengimplementasikan autentikasi berbasis JWT maupun OAuth, serta mengintegrasikan layanan pihak ketiga seperti **payment gateway**.",
       paragraph3:
-        "Pengalaman saya mencakup perancangan arsitektur database relasional MySQL, hingga integrasi layanan pihak ketiga berupa payment gateway.",
+        "Saya senang mengembangkan berbagai jenis aplikasi, mulai dari **website company profile**, **sistem informasi**, **dashboard admin**, **platform e-learning**, hingga **aplikasi web berbasis kebutuhan bisnis**. Dalam setiap proyek, saya mengutamakan kualitas kode, performa aplikasi, keamanan, dan pengalaman pengguna agar menghasilkan solusi yang memberikan nilai nyata bagi pengguna maupun organisasi.",
       paragraph4:
-        "Saat ini saya mencari peluang profesional untuk berkontribusi secara penuh sebagai Full-Stack Laravel Developer dalam tim engineering yang dinamis dan inovatif.",
+        "Saat ini saya terbuka untuk **proyek freelance**, **kerja praktik (internship)**, maupun **kolaborasi profesional** dalam pengembangan perangkat lunak. Saya siap membantu individu, UMKM, startup, maupun perusahaan dalam mewujudkan solusi digital yang modern, efisien, dan sesuai dengan kebutuhan bisnis.",
       programmingLanguages: "Frontend",
       databasesArchitecture: "Backend & Mobile",
       databaseTools: "Database & Tools",

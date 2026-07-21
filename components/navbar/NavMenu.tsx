@@ -188,7 +188,7 @@ export default function NavMenu() {
           </div>
         </div>
       </div>
-      <LoginBtn />
+      {/* <LoginBtn /> */}
       <NavMenuBtn active={active} toggleHamburger={toggleHamburger} />
     </>
   )
